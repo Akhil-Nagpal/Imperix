@@ -6,7 +6,7 @@ function Categories() {
 
 export default Categories;
 
-// 2 Compaonets -
+// 3 Components -
 // 1. Hero Banner
 // 2. Masonary Grid
 // 3. Tags

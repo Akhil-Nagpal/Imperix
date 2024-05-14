@@ -1,6 +1,5 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import App from "./App.jsx";
 import "./index.css";
 import {
   Route,
@@ -17,15 +16,24 @@ import About from "./pages/About.jsx";
 import Search from "./pages/Search.jsx";
 import Categories from "./pages/Categories.jsx";
 import Contact from "./pages/Contact.jsx";
+import SearchPhotos from "./pages/SearchPhotos";
+import SearchIllustrations from "./pages/SearchIllustrations";
+import SearchCollections from "./pages/SearchCollections";
+import SearchUsers from "./pages/SearchUsers.jsx";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<Root />}>
       <Route path="" element={<Home />} />
       <Route path="/about" element={<About />} />
-      <Route path="/search" element={<Search />} />
-      <Route path="/categories" element={<Categories />} />
+      <Route path="/search" element={<Search />}>
+        <Route path="photos" element={<SearchPhotos />} />
+        <Route path="illustrations" element={<SearchIllustrations />} />
+        <Route path="collections" element={<SearchCollections />} />
+        <Route path="users" element={<SearchUsers />} />
+      </Route>
       <Route path="/contact" element={<Contact />} />
+      <Route path="/categories" element={<Categories />} />
     </Route>
   )
 );

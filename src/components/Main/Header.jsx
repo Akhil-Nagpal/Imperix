@@ -22,6 +22,7 @@ function Header() {
         Imperix Search Engine!
       </h1>
       <h2>{submit}</h2>
+      {/* Search Bar */}
       <form onSubmit={handleSubmit}>
         <input
           className="px-5 py-2 w-1/3 rounded-tl-full rounded-bl-full bg-gray-200

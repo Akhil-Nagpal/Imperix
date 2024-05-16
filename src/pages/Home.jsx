@@ -106,3 +106,6 @@ function Home() {
 }
 
 export default Home;
+
+// 1. Navbar - Search Bar, Logo, Theme Toggler
+// Secondary Navbar - Categories,

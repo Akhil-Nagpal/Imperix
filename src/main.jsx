@@ -28,6 +28,7 @@ const router = createBrowserRouter(
       <Route path="/about" element={<About />} />
       <Route path="/search" element={<Search />}>
         <Route path="photos" element={<SearchPhotos />} />
+        <Route path="photos/:query" element={<SearchPhotos />} />
         <Route path="illustrations" element={<SearchIllustrations />} />
         <Route path="collections" element={<SearchCollections />} />
         <Route path="users" element={<SearchUsers />} />

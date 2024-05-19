@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import unsplashApi from "../utils/api";
-import MasonaryGrid from "../components/Main/MasonaryGrid";
+import MasonaryGrid from "../components/MasonaryGrid";
 import { useQuery } from "@tanstack/react-query";
 
 function Home() {
   const { data } = useQuery({
     queryKey: ["randomPhotos"],
-    queryFn: () => unsplashApi.get(`/photos?page=1`),
+    queryFn: () => unsplashApi.get(`/photos`),
     retry: 2,
     staleTime: Infinity,
     refetchOnMount: false,

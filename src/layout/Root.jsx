@@ -1,12 +1,16 @@
 import React from "react";
-import Header from "../components/Main/Header";
+import Header from "../components/Header";
 import { Outlet } from "react-router-dom";
 
 function Root() {
   return (
     <>
       <Header />
-      <Outlet />
+      <main>
+        <div className=" mx-4">
+          <Outlet />
+        </div>
+      </main>
     </>
   );
 }

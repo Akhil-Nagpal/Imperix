@@ -2,7 +2,7 @@ import React from "react";
 import unsplashApi from "../utils/api";
 import { useParams } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
-import MasonaryGrid from "../components/Main/MasonaryGrid";
+import MasonaryGrid from "../components/MasonaryGrid";
 
 function SearchPhotos() {
   let { query } = useParams();
@@ -21,8 +21,8 @@ function SearchPhotos() {
 
   return (
     <>
+      <h1 className="text-4xl font-bold capitalize">{query}</h1>
       <MasonaryGrid param={data?.data} />
-      <div>{query}</div>;
     </>
   );
 }

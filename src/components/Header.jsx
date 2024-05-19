@@ -1,22 +1,12 @@
 import React, { useState } from "react";
-import unsplashApi from "../../utils/api";
-import { useQuery } from "@tanstack/react-query";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function Header() {
   const [search, setSearch] = useState("");
   const [submit, setSubmit] = useState("");
-  const navigation = useNavigate();
 
-  // const { data } = useQuery({
-  //   queryKey: ["photos", param],
-  //   queryFn: () => unsplashApi.get(`/search/photos?query=${param}`),
-  //   enabled: !!param,
-  //   retry: false,
-  //   staleTime: Infinity,
-  //   refetchOnMount: false,
-  //   refetchOnWindowFocus: false,
-  // });
+  const navigation = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -26,8 +16,10 @@ function Header() {
 
   return (
     <>
-      <nav className="flex w-full justify-between items-center mx-4">
-        <img className="w-56" src="/Logo.svg" alt="Imperix logo" />
+      <nav className="flex w-full justify-between items-center ">
+        <Link to={"/"}>
+          <img className="w-56" src="/Logo.svg" alt="Imperix logo" />
+        </Link>
         {/* Search Bar */}
         <form
           className=" py-3 px-5 flex items-center justify-center"

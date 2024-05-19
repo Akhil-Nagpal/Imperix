@@ -4,23 +4,24 @@ function MasonaryGrid({ param }) {
   console.log(param);
   return (
     <>
-      <div className="grid grid-cols-3 gap-4">
+      <div className="columns-2 md:columns-3 lg:columns-3 mb-4">
         {param?.results
           ? param?.results?.map((item) => (
               <div key={item.id}>
                 <img
-                  className="h-auto max-w-full rounded-md"
-                  src={item?.urls?.full}
-                  alt=""
+                  className="h-auto w-full rounded-md mb-4"
+                  src={item?.urls?.thumb}
+                  alt={item?.alt_description}
                 />
               </div>
             ))
           : param?.map((item) => (
               <div key={item.id}>
                 <img
-                  className="h-auto max-w-full rounded-md"
-                  src={item?.urls?.full}
-                  alt=""
+                  loading="lazy"
+                  className="h-auto w-full rounded-md mb-4"
+                  src={item?.urls?.thumb}
+                  alt={item?.alt_description}
                 />
               </div>
             ))}

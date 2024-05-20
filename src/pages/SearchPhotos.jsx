@@ -1,15 +1,15 @@
 import React from "react";
-import unsplashApi from "../utils/api";
 import { useParams } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import MasonaryGrid from "../components/MasonaryGrid";
+import pexelApi from "../utils/api";
 
 function SearchPhotos() {
   let { query } = useParams();
 
-  const { data } = useQuery({
+  const { data: search } = useQuery({
     queryKey: ["photos", query],
-    queryFn: () => unsplashApi.get(`/search/photos?query=${query}`),
+    queryFn: () => pexelApi.get(`/search?query=${query}`),
     enabled: !!query,
     retry: false,
     staleTime: Infinity,
@@ -17,12 +17,12 @@ function SearchPhotos() {
     refetchOnWindowFocus: false,
   });
 
-  // console.log(data);
+  console.log(search);
 
   return (
     <>
       <h1 className="text-4xl font-bold capitalize">{query}</h1>
-      <MasonaryGrid param={data?.data} />
+      <MasonaryGrid param={search?.data} />
     </>
   );
 }

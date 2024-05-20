@@ -1,18 +1,19 @@
 import React, { useState } from "react";
-import unsplashApi from "../utils/api";
+
 import MasonaryGrid from "../components/MasonaryGrid";
 import { useInfiniteQuery } from "@tanstack/react-query";
+import pexelApi from "../utils/api";
 
 function Home() {
   const fetchData = async ({ pageParam }) => {
-    console.log(pageParam);
-    const { data } = await unsplashApi({
-      url: "/photos",
+    // console.log(pageParam);
+    const { data } = await pexelApi({
+      url: "/curated",
       params: {
         page: pageParam,
       },
     });
-    console.log(data);
+    // console.log(data);
     return data;
   };
 
@@ -31,6 +32,7 @@ function Home() {
   });
 
   const allPhotos = data?.pages?.flat();
+  // console.log(allPhotos);
 
   return (
     <>

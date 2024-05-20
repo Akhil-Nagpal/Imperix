@@ -1,21 +1,22 @@
-import React, { useState } from "react";
-
+import React, { useEffect } from "react";
 import MasonaryGrid from "../components/MasonaryGrid";
 import { useInfiniteQuery } from "@tanstack/react-query";
 import pexelApi from "../utils/api";
+import { useInView } from "react-intersection-observer";
 
 function Home() {
   const fetchData = async ({ pageParam }) => {
-    // console.log(pageParam);
     const { data } = await pexelApi({
       url: "/curated",
       params: {
         page: pageParam,
       },
     });
-    // console.log(data);
+
     return data;
   };
+
+  const { ref, inView } = useInView();
 
   const {
     data,
@@ -31,14 +32,18 @@ function Home() {
     getNextPageParam: (_, allPages) => allPages.length + 1,
   });
 
-  const allPhotos = data?.pages?.flat();
-  // console.log(allPhotos);
+  useEffect(() => {
+    if (inView && hasNextPage) {
+      fetchNextPage();
+    }
+  }, [inView, hasNextPage, fetchNextPage]);
 
   return (
     <>
-      <MasonaryGrid param={allPhotos} />
+      <MasonaryGrid param={data?.pages} />
 
       <button
+        ref={ref}
         className="bg-gray-200 text-lg py-2 px-4 rounded-lg"
         onClick={() => fetchNextPage()}
       >

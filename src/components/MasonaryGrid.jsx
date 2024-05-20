@@ -5,7 +5,7 @@ function MasonaryGrid({ param }) {
     return (
       <div>
         <img
-          className="h-auto w-full rounded-md mb-4"
+          className="h-auto w-full rounded-md mb-4 "
           src={item?.src?.large}
           alt={item?.alt}
         />
@@ -13,7 +13,20 @@ function MasonaryGrid({ param }) {
     );
   };
 
-  console.log(param);
+  // console.log(param);
+
+  // const content = param?.pages?.map((page) => {
+  //   console.log(page);
+  //   return page?.photos?.flatMap((item, index) => {
+  //     console.log(item);
+  //     if (page.length == index + 1) {
+  //       return <ImageCard key={item.id} item={item} />;
+  //     }
+  //     return <ImageCard key={item.id} item={item} />;
+  //   });
+  // });
+
+  // console.log(param);
 
   return (
     <>
@@ -22,12 +35,18 @@ function MasonaryGrid({ param }) {
           ? param?.photos?.map((item) => (
               <ImageCard item={item} key={item.id} />
             ))
-          : param?.[0]?.photos?.map((item) => (
-              <ImageCard item={item} key={item.id} />
-            ))}
+          : param?.flatMap((item) =>
+              item?.photos?.map((photo) => (
+                <ImageCard item={photo} key={photo.id} />
+              ))
+            )}
       </div>
     </>
   );
 }
 
 export default MasonaryGrid;
+
+// param?.[0]?.photos?.map((item) => (
+//   <ImageCard item={item} key={item.id} />
+// ))

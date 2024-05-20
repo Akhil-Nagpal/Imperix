@@ -11,15 +11,17 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 
 import Root from "./layout/Root.jsx";
-import Home from "./pages/Home.jsx";
-import About from "./pages/About.jsx";
-import Search from "./pages/Search.jsx";
-import Categories from "./pages/Categories.jsx";
-import Contact from "./pages/Contact.jsx";
-import SearchPhotos from "./pages/SearchPhotos";
-import SearchIllustrations from "./pages/SearchIllustrations";
-import SearchCollections from "./pages/SearchCollections";
-import SearchUsers from "./pages/SearchUsers.jsx";
+import {
+  Home,
+  About,
+  Contact,
+  Search,
+  Categories,
+  SearchCollections,
+  SearchPhotos,
+  SearchUsers,
+  SearchVideos,
+} from "./pages/index.js";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -29,7 +31,7 @@ const router = createBrowserRouter(
       <Route path="/search" element={<Search />}>
         <Route path="photos" element={<SearchPhotos />} />
         <Route path="photos/:query" element={<SearchPhotos />} />
-        <Route path="illustrations" element={<SearchIllustrations />} />
+        <Route path="videos" element={<SearchVideos />} />
         <Route path="collections" element={<SearchCollections />} />
         <Route path="users" element={<SearchUsers />} />
       </Route>

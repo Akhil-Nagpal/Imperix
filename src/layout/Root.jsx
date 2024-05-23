@@ -7,7 +7,7 @@ function Root() {
     <>
       <Header />
       <main>
-        <div className=" mx-4">
+        <div className="mx-4">
           <Outlet />
         </div>
       </main>

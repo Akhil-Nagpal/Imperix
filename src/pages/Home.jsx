@@ -61,7 +61,13 @@ function Home() {
       <div className="columns-2 md:columns-3 2xl:columns-4">
         {images?.map((item) => {
           // console.log(images);
-          return <MasonaryGrid key={item?.id} imgData={item} />;
+          return (
+            <MasonaryGrid
+              key={item?.id}
+              imgUrl={item?.src?.large}
+              imgAlt={item?.alt}
+            />
+          );
         })}
       </div>
 

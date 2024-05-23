@@ -1,45 +1,14 @@
 import React from "react";
 
-function MasonaryGrid({ param }) {
-  const ImageCard = ({ item }) => {
-    return (
-      <div>
-        <img
-          className="h-auto w-full rounded-md mb-4 "
-          src={item?.src?.large}
-          alt={item?.alt}
-        />
-      </div>
-    );
-  };
-
-  // console.log(param);
-
-  // const content = param?.pages?.map((page) => {
-  //   console.log(page);
-  //   return page?.photos?.flatMap((item, index) => {
-  //     console.log(item);
-  //     if (page.length == index + 1) {
-  //       return <ImageCard key={item.id} item={item} />;
-  //     }
-  //     return <ImageCard key={item.id} item={item} />;
-  //   });
-  // });
-
-  // console.log(param);
-
+function MasonaryGrid({ imgData }) {
   return (
     <>
-      <div className="columns-2 md:columns-3 lg:columns-3 mb-4">
-        {param?.photos
-          ? param?.photos?.map((item) => (
-              <ImageCard item={item} key={item.id} />
-            ))
-          : param?.flatMap((item) =>
-              item?.photos?.map((photo) => (
-                <ImageCard item={photo} key={photo.id} />
-              ))
-            )}
+      <div className="mb-4">
+        <img
+          className="h-auto w-full"
+          src={imgData?.src?.large}
+          alt={imgData?.alt}
+        />
       </div>
     </>
   );
@@ -50,3 +19,44 @@ export default MasonaryGrid;
 // param?.[0]?.photos?.map((item) => (
 //   <ImageCard item={item} key={item.id} />
 // ))
+
+// const ImageCard = ({ item, className }) => {
+//   return (
+//     <div className={className}>
+//       <img
+//         // className="h-auto w-full object-cover rounded-md mb-4 "
+//         src={item?.src?.large}
+//         alt={item?.alt}
+//       />
+//     </div>
+//   );
+// };
+
+// {
+/* <div className="rows-2 md:columns-3 xl:columns-4 gap-4">
+        {param?.photos
+          ? param?.photos?.map((item) => {
+              console.log(item.id);
+              return (
+                <ImageCard
+                  className="h-auto w-full rounded-md mb-4"
+                  item={item}
+                  key={item.id}
+                />
+              );
+            })
+          : param?.flatMap((item) =>
+              item?.photos?.map((photo, index) => {
+                console.log(photo.alt);
+
+                return (
+                  <ImageCard
+                    className="h-auto w-full rounded-md mb-4"
+                    item={photo}
+                    key={photo.id}
+                  />
+                );
+              })
+            )}
+      </div> */
+// }

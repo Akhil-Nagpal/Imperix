@@ -1,14 +1,10 @@
 import React from "react";
 
-function MasonaryGrid({ imgData }) {
+function MasonaryGrid({ imgUrl, imgAlt }) {
   return (
     <>
       <div className="mb-4">
-        <img
-          className="h-auto w-full"
-          src={imgData?.src?.large}
-          alt={imgData?.alt}
-        />
+        <img className="h-auto w-full" src={imgUrl} alt={imgAlt} />
       </div>
     </>
   );

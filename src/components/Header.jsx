@@ -16,13 +16,13 @@ function Header() {
 
   return (
     <>
-      <nav className="flex w-full justify-between items-center ">
+      <nav className="flex max-w-full justify-between items-center sticky top-0 bg-zinc-50 p-4">
         <Link to={"/"}>
           <img className="w-56" src="/Logo.svg" alt="Imperix logo" />
         </Link>
         {/* Search Bar */}
         <form
-          className=" py-3 px-5 flex items-center justify-center"
+          className=" flex items-center justify-center"
           onSubmit={handleSubmit}
         >
           <input

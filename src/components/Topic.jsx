@@ -4,6 +4,7 @@ import { useQuery } from "@tanstack/react-query";
 import { NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleRight, faAngleLeft } from "@fortawesome/free-solid-svg-icons";
+import HeroCategories from "./HeroCategories";
 
 function Topic() {
   const fetchTopics = async () => {
@@ -14,6 +15,7 @@ function Topic() {
         per_page: 20,
       },
     });
+
     return data;
   };
 
@@ -29,7 +31,7 @@ function Topic() {
           return (
             <NavLink key={item?.id} to={`/categories?t=${item?.slug}`}>
               <div>
-                <h1 className="slider w-max text-center text-lg">
+                <h1 className="slider w-max text-center text-lg alice-regular">
                   {item?.title}
                 </h1>
               </div>
@@ -43,6 +45,7 @@ function Topic() {
           <FontAwesomeIcon icon={faAngleLeft} />
         </div>
       </div>
+      {/* <HeroCategories /> */}
     </>
   );
 }

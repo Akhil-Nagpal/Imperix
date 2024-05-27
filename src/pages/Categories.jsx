@@ -5,6 +5,7 @@ import { useLocation } from "react-router-dom";
 import MasonaryGrid from "../components/MasonaryGrid";
 import { useInView } from "react-intersection-observer";
 import { useInfiniteQuery } from "@tanstack/react-query";
+import HeroCategories from "../components/HeroCategories";
 
 function Categories() {
   const location = useLocation();
@@ -12,7 +13,7 @@ function Categories() {
   const searchParams = new URLSearchParams(location.search);
   const searchQuery = searchParams.get("t");
 
-  console.log(searchQuery);
+  // console.log(searchQuery);
 
   const fetchTopic = async ({ pageParam }) => {
     const { data } = await unsplashApi({
@@ -24,6 +25,7 @@ function Categories() {
     // console.log(data);
     return data;
   };
+
   useEffect(() => {
     fetchTopic();
   }, [searchQuery]);
@@ -71,7 +73,7 @@ function Categories() {
     getNextPageParam: (_, allPages) => allPages.length + 1,
   });
 
-  console.log(data);
+  // console.log(data);
 
   useEffect(() => {
     let uniqueArray = data?.pages.flat(Infinity).filter((obj) => {
@@ -94,9 +96,10 @@ function Categories() {
   return (
     <>
       <Topic />
+      <HeroCategories topic={searchQuery} />
       <div className="columns-2 md:columns-3 2xl:columns-4">
         {images?.map((item) => {
-          console.log(item);
+          // console.log(item);
           return <MasonaryGrid key={item?.id} imgUrl={item?.urls?.regular} />;
         })}
       </div>

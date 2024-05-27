@@ -7,6 +7,7 @@ import Topic from "../components/Topic";
 
 function Home() {
   const [images, setImages] = useState([]);
+
   const uniqueIds = new Set();
 
   const fetchData = async ({ pageParam }) => {

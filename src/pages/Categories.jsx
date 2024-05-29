@@ -13,8 +13,6 @@ function Categories() {
   const searchParams = new URLSearchParams(location.search);
   const searchQuery = searchParams.get("t");
 
-  // console.log(searchQuery);
-
   const fetchTopic = async ({ pageParam }) => {
     const { data } = await unsplashApi({
       url: `/topics/${searchQuery}/photos`,
@@ -22,7 +20,7 @@ function Categories() {
         page: pageParam,
       },
     });
-    // console.log(data);
+
     return data;
   };
 
@@ -30,31 +28,8 @@ function Categories() {
     fetchTopic();
   }, [searchQuery]);
 
-  //   return (
-  //     <>
-  //       <Topic />
-  //       {data?.map((topic) => (
-  //         <div>
-  //           <MasonaryGrid key={topic.id} topic={topic} />
-  //         </div>
-  //       ))}
-  //     </>
-  //   );
-  // }
-
   const [images, setImages] = useState([]);
   const uniqueIds = new Set();
-
-  // const fetchData = async ({ pageParam }) => {
-  //   const { data } = await pexelApi({
-  //     url: "/curated",
-  //     params: {
-  //       page: pageParam,
-  //     },
-  //   });
-
-  //   return data?.photos;
-  // };
 
   const { ref, inView } = useInView();
 

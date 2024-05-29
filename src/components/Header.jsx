@@ -28,7 +28,7 @@ function Header() {
           <input
             className="px-5 py-2 w-96 flex items-center justify-center rounded-tl-full rounded-bl-full bg-gray-200
             outline-none text-violet-700"
-            type="text"
+            type="search"
             value={search}
             placeholder="search"
             onChange={(e) => setSearch(e.target.value)}

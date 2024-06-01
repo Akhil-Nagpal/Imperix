@@ -22,10 +22,10 @@ function HeroCategories({ topic }) {
           <p className="text-xl alice-regular">{data?.description}</p>
         </div>
 
-        <div className="border-[1px] border-gray-400 rounded-lg w-1/3 m-8 px-5 py-2">
+        <div className="border-[1px] border-gray-400 rounded-lg w-1/3 m-8 px-5 py-2 ">
           <h1 className="text-lg titillium py-2">Top Contributers</h1>
           {data?.top_contributors?.map((contributor) => (
-            <div className="flex gap-4 my-2">
+            <div className="flex gap-4 my-2 ">
               <div>
                 <img
                   className="rounded-full"

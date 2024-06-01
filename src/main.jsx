@@ -32,7 +32,7 @@ const router = createBrowserRouter(
         <Route path="photos" element={<SearchPhotos />} />
         <Route path="photos/:query" element={<SearchPhotos />} />
         <Route path="videos" element={<SearchVideos />} />
-        <Route path="collections" element={<SearchCollections />} />
+        <Route path="collections/:query" element={<SearchCollections />} />
         <Route path="users" element={<SearchUsers />} />
       </Route>
       <Route path="/contact" element={<Contact />} />

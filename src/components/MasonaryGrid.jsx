@@ -4,11 +4,7 @@ function MasonaryGrid({ imgUrl, imgAlt }) {
   return (
     <>
       <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
-        <img
-          className="h-auto w-full object-contain"
-          src={imgUrl}
-          alt={imgAlt}
-        />
+        <img className="h-auto w-full object-cover" src={imgUrl} alt={imgAlt} />
       </div>
     </>
   );

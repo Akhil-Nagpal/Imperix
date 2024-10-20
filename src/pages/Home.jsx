@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
-import MasonaryGrid from "../components/MasonaryGrid";
+import MasonaryGridCom from "../components/MasonaryGridCom";
 import { useInfiniteQuery } from "@tanstack/react-query";
 import { pexelApi } from "../utils/api";
 import { useInView } from "react-intersection-observer";
 import Topic from "../components/Topic";
+import Masonry from "react-responsive-masonry";
 
 function Home() {
   const [images, setImages] = useState([]);
@@ -59,17 +60,19 @@ function Home() {
   return (
     <>
       <Topic />
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-        {images?.map((item) => {
-          // console.log(images);
-          return (
-            <MasonaryGrid
-              key={item?.id}
-              imgUrl={item?.src?.large}
-              imgAlt={item?.alt}
-            />
-          );
-        })}
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        <Masonry columnsCount={4}>
+          {images?.map((item) => {
+            // console.log(images);
+            return (
+              <MasonaryGridCom
+                key={item?.id}
+                imgUrl={item?.src?.large}
+                imgAlt={item?.alt}
+              />
+            );
+          })}
+        </Masonry>
       </div>
 
       {isFetchingNextPage && (

@@ -1,6 +1,6 @@
 import React from "react";
 
-function MasonaryGrid({ imgUrl, imgAlt }) {
+function MasonaryGridCom({ imgUrl, imgAlt }) {
   return (
     <>
       <div className="mb-2">
@@ -10,7 +10,7 @@ function MasonaryGrid({ imgUrl, imgAlt }) {
   );
 }
 
-export default MasonaryGrid;
+export default MasonaryGridCom;
 
 // param?.[0]?.photos?.map((item) => (
 //   <ImageCard item={item} key={item.id} />

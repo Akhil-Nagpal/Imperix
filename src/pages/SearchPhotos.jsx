@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useInfiniteQuery, useQuery } from "@tanstack/react-query";
-import MasonaryGrid from "../components/MasonaryGrid";
+import MasonaryGrid from "../components/MasonaryGridCom";
 import { pexelApi } from "../utils/api";
 import { useInView } from "react-intersection-observer";
 

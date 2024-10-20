@@ -4,6 +4,7 @@ import { useInfiniteQuery, useQuery } from "@tanstack/react-query";
 import MasonaryGrid from "../components/MasonaryGridCom";
 import { pexelApi } from "../utils/api";
 import { useInView } from "react-intersection-observer";
+import Masonry from "react-responsive-masonry";
 
 function SearchPhotos() {
   let { query } = useParams();
@@ -62,7 +63,8 @@ function SearchPhotos() {
   return (
     <>
       <h1 className="text-4xl font-bold capitalize">{query}</h1>
-      <div className="columns-2 md:columns-3 2xl:columns-4">
+      {/* <div className="columns-2 md:columns-3 2xl:columns-4"> */}
+      <Masonry columnsCount={4} gutter="10px">
         {images?.map((item) => (
           <MasonaryGrid
             key={item?.id}
@@ -70,7 +72,9 @@ function SearchPhotos() {
             imgAlt={item?.alt}
           />
         ))}
-      </div>
+      </Masonry>
+
+      {/* </div> */}
 
       {isFetchingNextPage && (
         <div className="flex justify-center items-center h-80">Loading...</div>

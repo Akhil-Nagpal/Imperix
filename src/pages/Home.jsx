@@ -59,7 +59,7 @@ function Home() {
   return (
     <>
       <Topic />
-      <div className="columns-2 md:columns-3 2xl:columns-4">
+      <div className="flex flex-wrap gap-4">
         {images?.map((item) => {
           // console.log(images);
           return (

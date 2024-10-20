@@ -52,7 +52,7 @@ function SearchCollections() {
       <div className="flex flex-wrap gap-4 justify-center">
         {data?.pages?.map((collection) => {
           return collection?.results?.map((item) => {
-            console.log(item);
+            // console.log(item);
             return (
               <CollectionGrid
                 key={item?.id}

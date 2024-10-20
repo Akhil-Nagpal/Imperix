@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useInfiniteQuery, useQuery } from "@tanstack/react-query";
 import MasonaryGrid from "../components/MasonaryGrid";
-import { pexelApi, unsplashApi } from "../utils/api";
+import { pexelApi } from "../utils/api";
 import { useInView } from "react-intersection-observer";
 
 function SearchPhotos() {
@@ -13,8 +13,8 @@ function SearchPhotos() {
   const uniqueIds = new Set();
 
   const fetchData = async ({ pageParam }) => {
-    const { data } = await unsplashApi({
-      url: "/search/photos",
+    const { data } = await pexelApi({
+      url: "/search",
       params: {
         query: query,
         page: pageParam,

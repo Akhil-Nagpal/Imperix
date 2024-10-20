@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Topic from "../components/Topic";
 import { unsplashApi } from "../utils/api";
 import { useLocation } from "react-router-dom";
-import MasonaryGrid from "../components/MasonaryGrid";
+import MasonaryGrid from "../components/MasonaryGridCom";
 import { useInView } from "react-intersection-observer";
 import { useInfiniteQuery } from "@tanstack/react-query";
 import HeroCategories from "../components/HeroCategories";

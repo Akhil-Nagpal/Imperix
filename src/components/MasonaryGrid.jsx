@@ -3,7 +3,7 @@ import React from "react";
 function MasonaryGrid({ imgUrl, imgAlt }) {
   return (
     <>
-      <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
+      <div className="mb-2">
         <img className="h-auto w-full object-cover" src={imgUrl} alt={imgAlt} />
       </div>
     </>

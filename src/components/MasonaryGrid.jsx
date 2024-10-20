@@ -5,7 +5,7 @@ function MasonaryGrid({ imgUrl, imgAlt }) {
     <>
       <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
         <img
-          className="h-fit w-full object-contain"
+          className="h-auto w-full object-contain"
           src={imgUrl}
           alt={imgAlt}
         />

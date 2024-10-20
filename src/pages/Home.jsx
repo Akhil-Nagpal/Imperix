@@ -60,8 +60,8 @@ function Home() {
   return (
     <>
       <Topic />
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-        <Masonry columnsCount={4}>
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+        <Masonry columnsCount={4} gutter="10px">
           {images?.map((item) => {
             // console.log(images);
             return (

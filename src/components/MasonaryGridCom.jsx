@@ -4,7 +4,7 @@ function MasonaryGridCom({ imgUrl, imgAlt }) {
   return (
     <>
       <div className="mb-2">
-        <img className="h-auto w-full object-cover" src={imgUrl} alt={imgAlt} />
+        <img className="h-auto w-full" src={imgUrl} alt={imgAlt} />
       </div>
     </>
   );
